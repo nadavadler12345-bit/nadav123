@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10112b">
+  <meta name="description" content="האתר האישי שלי — בן 20, אחרי שירות פיקודי בגולני, אוהב ספורט, אתגרים ולמידה.">
+  <title>הסיפור שלי | האתר האישי</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#f8f7ff;--muted:#c8c6df;--bg:#10112b;--panel:rgba(255,255,255,.085);--pink:#ff5da2;--orange:#ffb454;--cyan:#54e6df;--purple:#9c83ff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Heebo",Arial,sans-serif;line-height:1.75;background:radial-gradient(ellipse at 8% 8%,rgba(156,131,255,.28),transparent 32%),radial-gradient(ellipse at 92% 28%,rgba(255,93,162,.19),transparent 30%),radial-gradient(ellipse at 45% 85%,rgba(84,230,223,.13),transparent 32%),var(--bg);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,91%);margin:auto}.topline{height:4px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink),var(--orange))}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:18px}.brand{font-weight:900;font-size:1.12rem}.brand span{color:var(--cyan)}.nav-links{display:flex;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:.94rem}.nav-links a:hover{color:var(--cyan)}
+    .hero{min-height:620px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;padding:60px 0 80px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(84,230,223,.4);color:var(--cyan);border-radius:99px;padding:7px 15px;background:rgba(84,230,223,.08);font-size:.92rem}.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+    h1{font-size:clamp(3rem,7vw,6rem);line-height:1.06;margin:24px 0 20px;font-weight:900;letter-spacing:-2px}.gradient{background:linear-gradient(100deg,var(--cyan),#b8a6ff 48%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}.intro{color:var(--muted);font-size:1.2rem;max-width:650px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:13px}.btn{padding:12px 21px;border-radius:13px;font-weight:800;display:inline-block;transition:.2s}.btn-primary{color:#17152d;background:linear-gradient(100deg,var(--cyan),#a8f5d9);box-shadow:0 10px 35px rgba(84,230,223,.2)}.btn-ghost{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06)}.btn:hover{transform:translateY(-3px)}
+    .portrait-wrap{position:relative;max-width:440px;margin:auto}.portrait{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 45%;border-radius:34px;border:2px solid rgba(255,255,255,.3);box-shadow:0 28px 75px rgba(0,0,0,.4),0 0 45px rgba(84,230,223,.15)}.portrait-wrap:before{content:"";position:absolute;inset:-13px 18px 18px -13px;border:2px solid rgba(84,230,223,.55);border-radius:38px;z-index:-1}.photo-label{position:absolute;bottom:18px;right:18px;background:rgba(16,17,43,.83);backdrop-filter:blur(12px);border:1px solid #ffffff35;border-radius:15px;padding:9px 15px;font-weight:800}
+    section{padding:38px 0}.section-head{margin-bottom:25px}.kicker{color:var(--pink);font-weight:800;letter-spacing:1px;font-size:.88rem}h2{font-size:clamp(2rem,4vw,3rem);line-height:1.2;margin:5px 0 10px}.section-sub{color:var(--muted);max-width:720px;margin:0}.glass{background:var(--panel);border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:30px;backdrop-filter:blur(14px);box-shadow:0 20px 55px rgba(0,0,0,.12)}
+    .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.about-copy p{color:var(--muted);margin:0 0 15px;font-size:1.06rem}.quote{border-right:4px solid var(--cyan);padding:12px 18px;margin-top:22px;color:#fff;font-size:1.14rem;font-weight:700;background:linear-gradient(90deg,transparent,rgba(84,230,223,.08));border-radius:10px}.quick-facts{display:grid;gap:13px}.fact{display:flex;align-items:center;gap:14px;padding:15px;border-radius:16px;background:rgba(10,12,35,.45);border:1px solid rgba(255,255,255,.09)}.fact-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:14px;font-size:1.45rem;background:rgba(156,131,255,.18)}.fact strong{display:block;font-size:1.05rem}.fact small{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.interest{min-height:225px;position:relative;overflow:hidden;transition:.25s}.interest:hover{transform:translateY(-6px);border-color:rgba(84,230,223,.45)}.interest .icon{font-size:2.5rem;display:block;margin-bottom:14px}.interest h3{margin:0 0 8px;font-size:1.3rem}.interest p{color:var(--muted);margin:0}.sports{--glow:rgba(255,180,84,.2)}.tech{--glow:rgba(84,230,223,.2)}.growth{--glow:rgba(156,131,255,.24)}.interest:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;left:-55px;bottom:-75px;background:var(--glow);filter:blur(2px)}
+    .journey{display:grid;grid-template-columns:1fr 1fr;gap:18px}.journey-card{display:flex;gap:16px;align-items:flex-start}.journey-icon{flex:0 0 54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:linear-gradient(135deg,rgba(255,93,162,.22),rgba(156,131,255,.2))}.journey-card h3{margin:0 0 5px}.journey-card p{color:var(--muted);margin:0}
+    .values{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.value{text-align:center;padding:21px 12px}.value b{display:block;font-size:1.08rem}.value span{font-size:2rem;display:block;margin-bottom:5px}.value small{color:var(--muted)}
+    .closing{text-align:center;padding:45px 25px;background:linear-gradient(115deg,rgba(156,131,255,.18),rgba(255,93,162,.13),rgba(84,230,223,.12))}.closing p{color:var(--muted);max-width:700px;margin:10px auto 22px}footer{padding:35px 0 45px;color:var(--muted);text-align:center;font-size:.92rem}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center;padding-top:45px;gap:45px}.intro{margin-inline:auto}.actions{justify-content:center}.portrait-wrap{width:min(360px,90%)}.about-grid,.journey{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.values{grid-template-columns:repeat(2,1fr)}.nav{flex-direction:column}.nav-links{justify-content:center;gap:13px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="topline"></div>
+<nav class="container nav"><a class="brand" href="#home">הסיפור <span>שלי.</span></a><div class="nav-links"><a href="#about">מי אני</a><a href="#journey">הדרך שלי</a><a href="#interests">תחומי עניין</a><a href="#values">הערכים שלי</a><a href="#future">מבט קדימה</a></div></nav>
+<header class="container hero" id="home">
+  <div><span class="eyebrow"><span class="dot"></span> בן 20 · בדרך לפרק הבא</span><h1>נעים להכיר,<br><span class="gradient">זה אני.</span></h1>
+    <p class="intro">בן 20, אחרי שירות פיקודי בחטיבת גולני. אוהב אתגרים, חי ונושם ספורט, ומאמין שהדרך הכי טובה להתקדם היא להמשיך ללמוד, להתנסות ולתת את המקסימום.</p>
+    <div class="actions"><a class="btn btn-primary" href="#about">בואו להכיר אותי ↓</a><a class="btn btn-ghost" href="#interests">הדברים שאני אוהב</a></div>
+  </div>
+  <div class="portrait-wrap"><img class="portrait" src="assets/profile-photo.png" alt="תמונה אישית שלי בטיול בחוץ"><div class="photo-label">⚡ אנרגיה טובה. תמיד קדימה.</div></div>
+</header>
+<main class="container">
+<section id="about"><div class="section-head"><span class="kicker">01 / מי אני</span><h2>קצת מעבר לכותרת</h2><p class="section-sub">הסיפור, החוויות והדברים שמניעים אותי.</p></div>
+<div class="about-grid"><article class="glass about-copy">
+<p>אני בן 20, בשלב מרגש בחיים שבו נפתחות אפשרויות חדשות ואפשר לבחור לאן לקחת את הדרך הבאה. מאחוריי שירות פיקודי בחטיבת גולני — תקופה משמעותית שהייתה חלק חשוב מהמסע האישי שלי.</p>
+<p>השירות הפיקודי חיבר אותי לעולמות של אחריות, עבודת צוות, התמודדות עם אתגרים וחתירה למטרה. למדתי כמה כוח יש באנשים שפועלים יחד, וכמה חשוב לשמור על מחויבות וגישה חיובית גם כשלא הכול פשוט.</p>
+<p>מחוץ למסגרת הצבאית, ספורט הוא חלק גדול ממי שאני. אני אוהב את האנרגיה, התחרותיות, המשמעת והתחושה שתמיד אפשר להשתפר עוד קצת. אני נהנה להציב לעצמי מטרות, להתקדם ולגלות בכל פעם מחדש למה אני מסוגל.</p>
+<div class="quote">"להישאר רעב ללמוד, אמיץ לנסות, ונחוש להגיע רחוק."</div></article>
+<aside class="glass quick-facts"><div class="fact"><div class="fact-icon">🎂</div><div><strong>בן 20</strong><small>תחילתו של פרק חדש</small></div></div><div class="fact"><div class="fact-icon">🪖</div><div><strong>שירות פיקודי בגולני</strong><small>אחריות, צוות ואתגרים</small></div></div><div class="fact"><div class="fact-icon">🏀</div><div><strong>אוהב ספורט</strong><small>תנועה, תחרות והתמדה</small></div></div><div class="fact"><div class="fact-icon">🚀</div><div><strong>מבט קדימה</strong><small>ללמוד, להתפתח ולכבוש מטרות</small></div></div></aside></div></section>
+<section id="journey"><div class="section-head"><span class="kicker">02 / הדרך שלי</span><h2>מהדרך שעברתי — למה שעוד מחכה</h2><p class="section-sub">כל שלב בדרך מוסיף ניסיון, נקודת מבט והזדמנות לצמוח.</p></div><div class="journey">
+<article class="glass journey-card"><div class="journey-icon">🪖</div><div><h3>שירות פיקודי בגולני</h3><p>שירות משמעותי במסגרת פיקודית, עם דגש על אחריות, דוגמה אישית, עבודת צוות והתמודדות עם מצבים מאתגרים.</p></div></article>
+<article class="glass journey-card"><div class="journey-icon">🌱</div><div><h3>הפרק הבא</h3><p>להמשיך לגלות תחומי עניין, לרכוש ידע וניסיון, להכיר אנשים חדשים ולבנות לעצמי דרך שמרגישה נכונה ומאתגרת.</p></div></article></div></section>
+<section id="interests"><div class="section-head"><span class="kicker">03 / האנרגיה שלי</span><h2>הדברים שעושים לי את זה</h2><p class="section-sub">תחומי עניין שמכניסים לי אנרגיה, סקרנות ורצון להשתפר.</p></div><div class="cards">
+<article class="glass interest sports"><span class="icon">🏀</span><h3>ספורט ותנועה</h3><p>אני אוהב ספורט ואת כל מה שמגיע איתו: אדרנלין, אתגר, תחרותיות, עבודת צוות והשאיפה להשתפר. מבחינתי, ספורט הוא גם דרך לשמור על אנרגיה וגם שיעור בהתמדה.</p></article>
+<article class="glass interest tech"><span class="icon">💻</span><h3>סקרנות ולמידה</h3><p>אני אוהב להיחשף לעולמות חדשים, ללמוד דברים שלא הכרתי ולפתח יכולות. כל ידע חדש הוא עוד כלי שיכול לפתוח דלת להזדמנות הבאה.</p></article>
+<article class="glass interest growth"><span class="icon">🚀</span><h3>אתגרים והתפתחות</h3><p>אני מאמין ביציאה מאזור הנוחות, בהצבת מטרות ובהתקדמות צעד אחר צעד. הדרך חשובה לא פחות מהתוצאה.</p></article></div></section>
+<section id="values"><div class="section-head"><span class="kicker">04 / מה שמוביל אותי</span><h2>הערכים שלי</h2><p class="section-sub">עקרונות שאני משתדל לקחת איתי לכל מקום.</p></div><div class="values">
+<div class="glass value"><span>🤝</span><b>עבודת צוות</b><small>להצליח ביחד</small></div><div class="glass value"><span>🎯</span><b>מיקוד במטרה</b><small>לדעת לאן אני מכוון</small></div><div class="glass value"><span>💪</span><b>התמדה</b><small>לא לוותר כשמאתגר</small></div><div class="glass value"><span>🧭</span><b>אחריות</b><small>לעמוד מאחורי המעשים</small></div></div></section>
+<section id="future"><div class="glass closing"><span class="kicker">05 / ממשיכים קדימה</span><h2>הסיפור שלי עדיין נכתב.</h2><p>אני מגיע לפרק הבא עם ניסיון, מוטיבציה, אהבה לספורט ורצון להמשיך להתפתח. יש עוד הרבה מה ללמוד, לגלות ולהשיג — ואני מחכה לאתגרים הבאים.</p><a class="btn btn-primary" href="#home">חזרה להתחלה ↑</a></div></section>
+</main>
+<footer class="container">נבנה עם אנרגיה, צבע והרבה מוטיבציה ✨ · © <span id="year"></span> · האתר האישי שלי</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
