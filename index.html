@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>נדב | מפקד לשעבר בגולני</title>
+<meta name="description" content="נדב, בן 20. שירות קרבי פיקודי בגולני, הובלת אנשים, עבודה עם רחפנים. מחפש את האתגר הבא.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161d17;
+    --olive:#1f2a20;
+    --olive-2:#2b3a2c;
+    --moss:#4a5d43;
+    --sand:#efe8da;
+    --sand-2:#e3d9c5;
+    --brass:#c39149;
+    --brass-2:#a8772f;
+    --text:#2a2a26;
+    --muted:#6b6a60;
+    --radius:18px;
+    --shadow:0 20px 50px -20px rgba(22,29,23,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Heebo",system-ui,sans-serif;
+    background:var(--sand);
+    color:var(--text);
+    line-height:1.7;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:"Frank Ruhl Libre",serif;line-height:1.15;color:var(--ink)}
+  .wrap{width:min(1120px,92%);margin-inline:auto}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;inset-inline:0;top:0;z-index:50;
+    transition:background .35s, box-shadow .35s;
+  }
+  nav.scrolled{background:rgba(31,42,32,.92);backdrop-filter:blur(10px);box-shadow:0 6px 24px rgba(0,0,0,.18)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:"Frank Ruhl Libre",serif;font-weight:900;font-size:1.6rem;color:var(--sand);letter-spacing:.5px}
+  .logo span{color:var(--brass)}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--sand-2);font-size:.95rem;font-weight:500;position:relative;padding-block:4px}
+  .nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:-2px;height:2px;background:var(--brass);transform:scaleX(0);transition:transform .3s}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .menu-btn{display:none;background:none;border:0;color:var(--sand);font-size:1.6rem;cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    background:
+      radial-gradient(1200px 600px at 85% 10%, rgba(195,145,73,.18), transparent 60%),
+      linear-gradient(160deg,var(--olive) 0%,var(--ink) 100%);
+    color:var(--sand);
+    display:flex;align-items:center;
+    padding-block:120px 80px;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;opacity:.07;
+    background-image:repeating-radial-gradient(circle at 20% 80%, transparent 0 28px, var(--sand) 29px 30px);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--brass);font-weight:500;letter-spacing:2px;font-size:.85rem;margin-bottom:22px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--brass)}
+  .hero h1{color:var(--sand);font-size:clamp(3rem,7vw,5.4rem);font-weight:900;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--brass)}
+  .hero .lead{font-size:1.2rem;color:#cfc8b8;max-width:520px;margin-bottom:36px;font-weight:300}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 28px;border-radius:999px;font-weight:500;font-size:1rem;
+    transition:transform .25s, background .25s, color .25s, box-shadow .25s;
+  }
+  .btn-primary{background:var(--brass);color:var(--ink);box-shadow:0 10px 30px -10px rgba(195,145,73,.7)}
+  .btn-primary:hover{background:#d4a35b;transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid rgba(239,232,218,.35);color:var(--sand)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass);transform:translateY(-2px)}
+
+  .hero-photo{position:relative;justify-self:center;width:min(380px,100%)}
+  .hero-photo .frame{
+    border-radius:28px;overflow:hidden;aspect-ratio:4/5;
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.6);
+    border:6px solid rgba(239,232,218,.08);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+  .hero-photo::before{
+    content:"";position:absolute;inset:-18px -18px 18px 18px;
+    border:2px solid var(--brass);border-radius:30px;z-index:-1;opacity:.6;
+  }
+  .badge{
+    position:absolute;bottom:26px;right:-34px;
+    background:var(--sand);color:var(--ink);
+    padding:14px 18px;border-radius:14px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:12px;font-weight:500;font-size:.92rem
+  }
+  .badge b{font-family:"Frank Ruhl Libre",serif;font-size:1.6rem;color:var(--moss)}
+  .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#8f8a7c;font-size:.8rem;letter-spacing:2px;animation:bob 2.2s infinite}
+  @keyframes bob{50%{transform:translate(-50%,6px)}}
+
+  /* ---------- STATS ---------- */
+  .stats{margin-top:-56px;position:relative;z-index:5}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden
+  }
+  .stat{padding:30px 22px;text-align:center;border-inline-start:1px solid #eee6d6}
+  .stat:first-child{border:0}
+  .stat .num{font-family:"Frank Ruhl Libre",serif;font-size:2.3rem;font-weight:900;color:var(--moss);line-height:1}
+  .stat .lbl{color:var(--muted);font-size:.92rem;margin-top:8px}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding-block:110px}
+  .sec-head{margin-bottom:56px;max-width:640px}
+  .sec-head .eyebrow{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2.1rem,4vw,3rem);font-weight:900}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.08rem}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-text p{margin-bottom:18px;font-size:1.08rem}
+  .about-text p strong{color:var(--ink)}
+  .quote{
+    margin-top:28px;padding:22px 26px;border-inline-start:4px solid var(--brass);
+    background:var(--sand-2);border-radius:12px 0 0 12px;
+    font-family:"Frank Ruhl Libre",serif;font-size:1.35rem;color:var(--olive)
+  }
+  .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .about-photos img{border-radius:var(--radius);object-fit:cover;width:100%;height:100%;box-shadow:var(--shadow)}
+  .about-photos .tall{grid-row:span 2;aspect-ratio:3/5}
+  .about-photos .sq{aspect-ratio:1}
+
+  /* service */
+  .service{background:var(--olive);color:var(--sand);position:relative;overflow:hidden}
+  .service .sec-head h2{color:var(--sand)}
+  .service .sec-head p{color:#b9b3a3}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    background:var(--olive-2);border:1px solid rgba(239,232,218,.08);
+    border-radius:var(--radius);padding:34px 28px;
+    transition:transform .35s, border-color .35s, background .35s;
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(195,145,73,.5);background:#314233}
+  .card .icon{
+    width:56px;height:56px;border-radius:14px;display:grid;place-items:center;
+    background:rgba(195,145,73,.14);margin-bottom:22px
+  }
+  .card .icon svg{width:28px;height:28px;stroke:var(--brass);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{color:var(--sand);font-size:1.45rem;margin-bottom:12px}
+  .card p{color:#c2bcac;font-size:1rem}
+  .service-band{
+    margin-top:56px;display:grid;grid-template-columns:1.4fr 1fr;gap:22px;align-items:stretch
+  }
+  .service-band img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover;max-height:380px}
+  .service-band .portrait-sm{object-position:center 20%}
+
+  /* skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .skill{
+    background:#fff;border-radius:var(--radius);padding:28px;
+    box-shadow:0 10px 30px -18px rgba(22,29,23,.25);
+    display:flex;gap:18px;align-items:flex-start;
+    transition:transform .3s
+  }
+  .skill:hover{transform:translateY(-4px)}
+  .skill .n{font-family:"Frank Ruhl Libre",serif;font-size:1.9rem;font-weight:900;color:var(--brass);line-height:1}
+  .skill h3{font-size:1.2rem;margin-bottom:6px}
+  .skill p{color:var(--muted);font-size:.97rem}
+
+  /* life */
+  .life{background:var(--sand-2)}
+  .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .life-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow);cursor:pointer}
+  .life-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .life-card:hover img{transform:scale(1.06)}
+  .life-card .cap{
+    position:absolute;inset:auto 0 0 0;padding:70px 24px 24px;
+    background:linear-gradient(transparent,rgba(16,22,17,.88));color:var(--sand)
+  }
+  .life-card .tag{font-size:.78rem;letter-spacing:2px;color:var(--brass);font-weight:500}
+  .life-card h3{color:var(--sand);font-size:1.5rem;margin-top:4px}
+  .life-card p{font-size:.95rem;color:#d6d0c1;margin-top:4px}
+  .hobbies{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;justify-content:center}
+  .chip{background:#fff;padding:10px 20px;border-radius:999px;font-weight:500;color:var(--olive);box-shadow:0 6px 18px -10px rgba(0,0,0,.2)}
+
+  /* contact */
+  .contact{
+    background:linear-gradient(160deg,var(--olive) 0%,var(--ink) 100%);
+    color:var(--sand);text-align:center
+  }
+  .contact h2{color:var(--sand);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;margin-bottom:16px}
+  .contact h2 em{font-style:normal;color:var(--brass)}
+  .contact p{color:#bdb7a7;max-width:560px;margin:0 auto 40px;font-size:1.1rem}
+  .contact-cards{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .c-card{
+    display:flex;align-items:center;gap:14px;padding:18px 26px;border-radius:16px;
+    background:rgba(239,232,218,.06);border:1px solid rgba(239,232,218,.12);
+    transition:border-color .3s, transform .3s;min-width:240px;justify-content:center
+  }
+  .c-card:hover{border-color:var(--brass);transform:translateY(-3px)}
+  .c-card svg{width:22px;height:22px;stroke:var(--brass);fill:none;stroke-width:1.8}
+  .c-card small{display:block;color:#9e988a;font-size:.8rem}
+  footer{background:var(--ink);color:#7d796d;text-align:center;padding:26px;font-size:.88rem}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(10,14,11,.94);display:none;place-items:center;z-index:100;padding:24px;cursor:zoom-out}
+  .lightbox.open{display:grid}
+  .lightbox img{max-height:90vh;max-width:92vw;border-radius:12px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid,.about-grid,.service-band{grid-template-columns:1fr}
+    .hero{text-align:center}
+    .hero .lead{margin-inline:auto}
+    .btns{justify-content:center}
+    .eyebrow{justify-content:center}
+    .hero-photo{order:-1;width:min(300px,80%)}
+    .badge{right:-10px}
+    .service-grid,.skills-grid,.life-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3){border:0}
+    .stat{border-top:1px solid #eee6d6}
+    .stat:nth-child(-n+2){border-top:0}
+    .nav-links{
+      position:fixed;top:72px;inset-inline:0;flex-direction:column;gap:0;
+      background:var(--olive);padding:10px 0;display:none
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{display:block;padding:14px 6%}
+    .menu-btn{display:block}
+    section{padding-block:80px}
+    .life-card{aspect-ratio:4/5}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">נדב<span>.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="תפריט">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">עליי</a></li>
+      <li><a href="#service">השירות</a></li>
+      <li><a href="#skills">מה אני מביא</a></li>
+      <li><a href="#life">מחוץ לעבודה</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">לוחם ומפקד · חטיבת גולני</div>
+      <h1>היי, אני <em>נדב</em>.</h1>
+      <p class="lead">בן 20, אחרי שירות קרבי פיקודי בגולני. הובלתי אנשים במצבים לא פשוטים, עבדתי עם רחפנים ולמדתי לקחת אחריות מהרגע הראשון. עכשיו אני מחפש את האתגר הבא.</p>
+      <div class="btns">
+        <a href="#contact" class="btn btn-primary">בואו נדבר ←</a>
+        <a href="#service" class="btn btn-ghost">מה עשיתי בצבא</a>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <div class="frame"><img src="images/portrait.jpg" alt="נדב"></div>
+      <div class="badge"><b>20</b> מוכן<br>לאתגר הבא</div>
+    </div>
+  </div>
+  <div class="scroll-hint">גללו ↓</div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="num">גולני</div><div class="lbl">שירות קרבי</div></div>
+      <div class="stat"><div class="num">מפקד</div><div class="lbl">תפקיד פיקודי</div></div>
+      <div class="stat"><div class="num">רחפנים</div><div class="lbl">ניסיון טכנולוגי מבצעי</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">מחויבות לצוות</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <div class="sec-head" style="margin-bottom:28px">
+        <div class="eyebrow">עליי</div>
+        <h2>אדם של אנשים,<br>עם ראש של משימה.</h2>
+      </div>
+      <p>אני <strong>נדב, בן 20</strong>. את השנים האחרונות העברתי ב<strong>חטיבת גולני</strong>, בשירות קרבי ובתפקיד פיקודי, שם למדתי שהדבר הכי חשוב בכל מסגרת הוא האנשים.</p>
+      <p>בתור מפקד עבדתי גם עם <strong>חיילים מאתגרים</strong>, כאלה שצריך להשקיע בהם יותר. למדתי להקשיב, להציב גבולות ברורים ולבנות אמון, עד שהם הפכו לחלק משמעותי מהצוות.</p>
+      <p>מחוץ למדים אני אוהב <strong>כדורסל, ריצה וזמן עם החברים</strong>. משם מגיעים האנרגיה, המשמעת העצמית והיכולת לעבוד בקבוצה.</p>
+      <div class="quote">"לא מחכה שיגידו לי. רואה מה צריך, ועושה."</div>
+    </div>
+    <div class="about-photos reveal">
+      <img class="tall" src="images/budapest.jpg" alt="נדב בטיול">
+      <img class="sq" src="images/run-tlv.jpg" alt="ריצה בבוקר">
+      <img class="sq" src="images/friends.jpg" alt="עם חברים">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="service" id="service">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">השירות הצבאי</div>
+      <h2>מה למדתי בגולני</h2>
+      <p>שירות קרבי פיקודי לימד אותי להחליט מהר, לתפקד תחת לחץ ולהוביל אנשים לאורך זמן.</p>
+    </div>
+    <div class="service-grid">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg></div>
+        <h3>פיקוד והובלה</h3>
+        <p>אחריות מלאה על חיילים: אימונים, משמעת, מוכנות ותפקוד הצוות ביום-יום ובמשימות.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/><path d="M7 7l2 2M17 7l-2 2M7 17l2-2M17 17l-2-2"/></svg></div>
+        <h3>עבודה עם רחפנים</h3>
+        <p>שילוב רחפנים בעבודה המבצעית: תפעול ציוד טכנולוגי, קבלת החלטות לפי מידע בזמן אמת ותיאום עם הכוח בשטח.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+        <h3>חיילים מאתגרים</h3>
+        <p>ליווי אישי של חיילים עם קשיים: הקשבה, סבלנות, גבולות ברורים ובניית אמון שהפכו אותם לחלק מהצוות.</p>
+      </div>
+    </div>
+    <div class="service-band reveal">
+      <img src="images/army-team.jpg" alt="נדב עם הצוות">
+      <img class="portrait-sm" src="images/army-night.jpg" alt="נדב במדים">
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">מה אני מביא איתי</div>
+      <h2>למה כדאי לעבוד איתי</h2>
+      <p>הכישורים שבניתי בשירות ובחיים, ושאני מביא לכל מקום עבודה.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill reveal"><div class="n">01</div><div><h3>אחריות</h3><p>כשמשהו עליי, הוא נעשה. עד הסוף.</p></div></div>
+      <div class="skill reveal"><div class="n">02</div><div><h3>עבודה תחת לחץ</h3><p>שומר על ראש קר ומחליט נכון גם כשהזמן קצר.</p></div></div>
+      <div class="skill reveal"><div class="n">03</div><div><h3>יחסי אנוש</h3><p>מבין אנשים, יודע לדבר עם כל אחד ולגשר על פערים.</p></div></div>
+      <div class="skill reveal"><div class="n">04</div><div><h3>עבודת צוות</h3><p>מהמגרש, מהמסלול ומהפלוגה: יחד מגיעים רחוק יותר.</p></div></div>
+      <div class="skill reveal"><div class="n">05</div><div><h3>לומד מהר</h3><p>מרחפנים ועד מערכות חדשות, נכנס לעניין במהירות.</p></div></div>
+      <div class="skill reveal"><div class="n">06</div><div><h3>משמעת עצמית</h3><p>ריצות בבוקר, אימונים קבועים, יעדים שמושגים.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE -->
+<section class="life" id="life">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">מחוץ לעבודה</div>
+      <h2>מה ממלא אותי באנרגיה</h2>
+    </div>
+    <div class="life-grid">
+      <div class="life-card reveal" data-img="images/run-tlv.jpg">
+        <img src="images/run-tlv.jpg" alt="ריצה בתל אביב">
+        <div class="cap"><div class="tag">ריצה</div><h3>קילומטרים של בוקר</h3><p>ריצה בטיילת עם שותף קבוע. ככה מתחיל יום טוב.</p></div>
+      </div>
+      <div class="life-card reveal" data-img="images/friends.jpg">
+        <img src="images/friends.jpg" alt="עם חברים במעיין">
+        <div class="cap"><div class="tag">חברים</div><h3>האנשים שלי</h3><p>טיולים, מעיינות ושיחות עד מאוחר.</p></div>
+      </div>
+      <div class="life-card reveal" data-img="images/budapest.jpg">
+        <img src="images/budapest.jpg" alt="בודפשט">
+        <div class="cap"><div class="tag">טיולים</div><h3>לראות עולם</h3><p>בודפשט, והיעד הבא כבר בתכנון.</p></div>
+      </div>
+    </div>
+    <div class="hobbies reveal">
+      <span class="chip">🏀 כדורסל</span>
+      <span class="chip">🏃 ריצה</span>
+      <span class="chip">🤝 חברים</span>
+      <span class="chip">✈️ טיולים</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="justify-content:center">צור קשר</div>
+    <h2>מחפשים מישהו <em>שאפשר לסמוך עליו</em>?</h2>
+    <p>אשמח להכיר, לשמוע על התפקיד ולספר עוד. אפשר לפנות אליי בכל אחת מהדרכים:</p>
+    <div class="contact-cards">
+      <!-- ✏️ להחליף את מספר הטלפון -->
+      <a class="c-card" href="tel:+972500000000">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <div><small>טלפון</small>050-000-0000</div>
+      </a>
+      <!-- ✏️ להחליף את כתובת המייל -->
+      <a class="c-card" href="mailto:nadav@example.com">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        <div><small>מייל</small>nadav@example.com</div>
+      </a>
+      <!-- ✏️ להחליף את המספר בקישור (פורמט בינלאומי, בלי 0 בהתחלה) -->
+      <a class="c-card" href="https://wa.me/972500000000" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        <div><small>וואטסאפ</small>שלחו הודעה</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="year"></span> נדב · נבנה באהבה ובמשמעת 🫡</footer>
+
+<div class="lightbox" id="lightbox"><img id="lbImg" alt=""></div>
+
+<script>
+  // nav background on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll); onScroll();
+
+  // mobile menu
+  const links = document.getElementById('navLinks');
+  document.getElementById('menuBtn').onclick = () => links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+
+  // reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+    io.observe(el);
+  });
+
+  // lightbox for photos
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg');
+  document.querySelectorAll('.life-card, .about-photos img, .service-band img').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
+      lbImg.src = el.dataset.img || el.src;
+      lb.classList.add('open');
+    });
+  });
+  lb.onclick = () => lb.classList.remove('open');
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
